@@ -52,13 +52,31 @@
       linear-gradient(155deg, #0a1020 0%, #0f1525 42%, #191a26 78%, #201d27 100%);}
 
   header{position:sticky;top:0;z-index:50;padding:14px 0 12px;background:transparent}
-  header nav{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:20px;
-    padding:10px 16px;border:1px solid rgba(120,150,210,.24);border-radius:18px;
+  header nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
+    min-height:68px;padding:10px 16px;border:1px solid rgba(120,150,210,.24);border-radius:18px;
     background:rgba(10,16,32,.78);backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.22)}
   .logo{height:34px;width:auto;display:block;padding:9px 14px;
     border:1px solid rgba(120,150,210,.24);border-radius:12px;background:rgba(120,150,210,.06);
     box-sizing:content-box;transition:border-color .2s,background .2s}
   .logo:hover{border-color:rgba(47,107,255,.4);background:rgba(47,107,255,.08)}
+  .nav-ticker{min-width:0;overflow:hidden;border:1px solid rgba(120,150,210,.18);border-radius:11px;
+    background:rgba(120,150,210,.04);position:relative;
+    mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .nav-ticker-track{display:flex;align-items:center;gap:10px;width:max-content;padding:9px 12px;
+    animation:nav-ticker 42s linear infinite}
+  .nav-ticker:hover .nav-ticker-track{animation-play-state:paused}
+  .tick{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-size:12px;font-weight:600;
+    color:var(--muted2);padding:5px 11px;border-radius:999px;border:1px solid rgba(120,150,210,.16);
+    background:rgba(10,16,32,.55)}
+  .tick b{color:var(--text);font-weight:700}
+  .tick .dot{width:7px;height:7px;border-radius:50%;flex:0 0 auto}
+  .tick .dot-out{background:#f59e6a;box-shadow:0 0 8px rgba(245,158,106,.55)}
+  .tick .dot-in{background:var(--green);box-shadow:0 0 8px rgba(63,191,134,.55)}
+  .tick .dot-fiscal{background:var(--blue-bright);box-shadow:0 0 8px rgba(91,155,240,.55)}
+  .tick .dot-doc{background:#a78bfa;box-shadow:0 0 8px rgba(167,139,250,.45)}
+  @keyframes nav-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.nav-ticker-track{animation:none;flex-wrap:wrap;justify-content:center}}
   .nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
   .nav-links a.nl{color:var(--muted);font-weight:600;font-size:14px;padding:9px 16px;
     border:1px solid rgba(120,150,210,.22);border-radius:10px;background:rgba(120,150,210,.05);
@@ -176,6 +194,8 @@
   .reveal.in{opacity:1;transform:none}
 
   @media(max-width:880px){
+    header nav{grid-template-columns:auto 1fr auto}
+    .nav-ticker{display:none}
     .nav-links .nl{display:none}
     .hero{grid-template-columns:1fr;gap:36px;text-align:center;padding:48px 0 28px}
     .hero-text{text-align:center}
@@ -195,6 +215,34 @@
 <header>
   <nav class="wrap">
     <img class="logo" src="./logo.png" alt="FinanceBit" />
+    <div class="nav-ticker" aria-label="Rotina contábil do dia a dia">
+      <div class="nav-ticker-track">
+        <span class="tick"><span class="dot dot-out"></span><b>Contas a pagar</b> · venc. 12/06</span>
+        <span class="tick"><span class="dot dot-in"></span><b>Contas a receber</b> · NF 1842</span>
+        <span class="tick"><span class="dot dot-doc"></span><b>Notas fiscais</b> · conferência</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>Obrigações fiscais</b> · DCTFWeb</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>SPED Fiscal</b> · transmissão</span>
+        <span class="tick"><span class="dot dot-out"></span><b>Folha de pagamento</b> · encargos</span>
+        <span class="tick"><span class="dot dot-in"></span><b>Fluxo de caixa</b> · entradas e saídas</span>
+        <span class="tick"><span class="dot dot-doc"></span><b>Conciliação bancária</b> · extrato</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>Guias de recolhimento</b> · ISS · ICMS</span>
+        <span class="tick"><span class="dot dot-in"></span><b>DRE</b> · resultado do mês</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>ECD / ECF</b> · fechamento</span>
+        <span class="tick"><span class="dot dot-out"></span><b>Impostos</b> · IRPJ · CSLL · PIS</span>
+        <span class="tick"><span class="dot dot-out"></span><b>Contas a pagar</b> · venc. 12/06</span>
+        <span class="tick"><span class="dot dot-in"></span><b>Contas a receber</b> · NF 1842</span>
+        <span class="tick"><span class="dot dot-doc"></span><b>Notas fiscais</b> · conferência</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>Obrigações fiscais</b> · DCTFWeb</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>SPED Fiscal</b> · transmissão</span>
+        <span class="tick"><span class="dot dot-out"></span><b>Folha de pagamento</b> · encargos</span>
+        <span class="tick"><span class="dot dot-in"></span><b>Fluxo de caixa</b> · entradas e saídas</span>
+        <span class="tick"><span class="dot dot-doc"></span><b>Conciliação bancária</b> · extrato</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>Guias de recolhimento</b> · ISS · ICMS</span>
+        <span class="tick"><span class="dot dot-in"></span><b>DRE</b> · resultado do mês</span>
+        <span class="tick"><span class="dot dot-fiscal"></span><b>ECD / ECF</b> · fechamento</span>
+        <span class="tick"><span class="dot dot-out"></span><b>Impostos</b> · IRPJ · CSLL · PIS</span>
+      </div>
+    </div>
     <div class="nav-links">
       <a class="nl" href="#recursos">Recursos</a>
       <a class="nl" href="#planos">Planos</a>
