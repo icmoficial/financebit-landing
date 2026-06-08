@@ -164,6 +164,21 @@
     .plans{grid-template-columns:1fr}
     .final{padding:38px 22px}
   }
+
+  /* opções de acesso — 3 lado a lado, com bordas */
+  .access-section{padding:10px 0 52px}
+  .access-label{text-align:center;color:var(--muted2);font-size:14px;margin-bottom:18px}
+  .access-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto}
+  .acc-card{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--surface-card),#0b1730);
+    border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:.22s}
+  .acc-card:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.45);box-shadow:0 18px 44px rgba(0,0,0,.4)}
+  .acc-card .ic{flex:0 0 auto;width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(47,107,255,.12);border:1px solid rgba(47,107,255,.28)}
+  .acc-card .acc-body{display:flex;flex-direction:column;flex:1;min-width:0}
+  .acc-card .t{font-weight:700;font-size:15px}
+  .acc-card .s{font-size:12px;color:var(--muted2)}
+  .acc-card .arrow{color:var(--blue-bright);font-weight:700;font-size:14px;white-space:nowrap}
+  @media(max-width:860px){.access-row{grid-template-columns:1fr;max-width:430px}}
 </style>
 </head>
 <body>
@@ -175,8 +190,8 @@
       <a class="nl" href="#recursos">Recursos</a>
       <a class="nl" href="#planos">Planos</a>
       <a class="nl" href="#acesso">Acesso</a>
-      <!-- EDITAR-LINK 2 (login) — para quem já tem conta -->
-      <a class="btn btn-ghost" href="https://financebit-virid.vercel.app" rel="noopener">Entrar</a>
+      <!-- EDITAR-LINK 2 — acessar a plataforma (web app) -->
+      <a class="btn btn-ghost" href="https://financebit-virid.vercel.app" rel="noopener">Acessar plataforma</a>
     </div>
   </nav>
 </header>
@@ -192,25 +207,30 @@
       <a class="btn btn-blue" href="https://financebit-virid.vercel.app" rel="noopener">Começar grátis · 14 dias</a>
     </div>
     <div class="trust reveal in"><span><b>✓</b> Sem cartão para testar</span><span><b>✓</b> Dados isolados por empresa</span><span><b>✓</b> Tema claro e escuro</span></div>
+  </section>
 
-    <!-- OPÇÕES DE ACESSO / DOWNLOAD NO TOPO -->
-    <p class="reveal in" id="acesso" style="margin-top:36px;color:var(--muted2);font-size:14px">Comece agora — acesse pelo navegador ou baixe o aplicativo:</p>
-    <div class="access reveal in" style="margin-top:14px">
-      <div class="acc">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b9bf0" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"/></svg></div>
-        <div><div class="t">No navegador</div><div class="s">Acesse o sistema na hora</div></div>
-        <!-- EDITAR-LINK 2 --><a href="https://financebit-virid.vercel.app" rel="noopener">Acessar →</a>
-      </div>
-      <div class="acc">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="#5b9bf0"><path d="M3 5.5 11 4v7.5H3zM12 3.8 21 2.5V11.5h-9zM3 12.5h8V20L3 18.5zM12 12.5h9V21.5l-9-1.3z"/></svg></div>
-        <div><div class="t">Windows</div><div class="s">Aplicativo para PC</div></div>
-        <!-- EDITAR-LINK 3 --><a href="https://github.com/icmoficial/Contbit-Frontend/releases/latest/download/FinanceBit-Setup.exe" rel="noopener">Baixar →</a>
-      </div>
-      <div class="acc">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b9bf0" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></div>
-        <div><div class="t">No celular</div><div class="s">Android · instale pelo navegador</div></div>
-        <!-- EDITAR-LINK 4 --><a href="https://financebit-virid.vercel.app" rel="noopener">Abrir →</a>
-      </div>
+  <!-- OPÇÕES DE ACESSO / DOWNLOAD -->
+  <section class="access-section" id="acesso">
+    <p class="access-label reveal in">Comece agora — acesse pelo navegador ou baixe o aplicativo:</p>
+    <div class="access-row reveal in">
+      <!-- EDITAR-LINK 2 (acessar via site) -->
+      <a class="acc-card" href="https://financebit-virid.vercel.app" rel="noopener">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bf0" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"/></svg></span>
+        <span class="acc-body"><span class="t">No navegador</span><span class="s">Acesse o sistema na hora</span></span>
+        <span class="arrow">Acessar →</span>
+      </a>
+      <!-- EDITAR-LINK 3 (download Windows) -->
+      <a class="acc-card" href="https://github.com/icmoficial/Contbit-Frontend/releases/latest/download/FinanceBit-Setup.exe" rel="noopener">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="#5b9bf0"><path d="M3 5.5 11 4v7.5H3zM12 3.8 21 2.5V11.5h-9zM3 12.5h8V20L3 18.5zM12 12.5h9V21.5l-9-1.3z"/></svg></span>
+        <span class="acc-body"><span class="t">Windows</span><span class="s">Aplicativo para PC</span></span>
+        <span class="arrow">Baixar →</span>
+      </a>
+      <!-- EDITAR-LINK 4 (Android / PWA) -->
+      <a class="acc-card" href="https://financebit-virid.vercel.app" rel="noopener">
+        <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bf0" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></span>
+        <span class="acc-body"><span class="t">No celular</span><span class="s">Android · instale pelo navegador</span></span>
+        <span class="arrow">Abrir →</span>
+      </a>
     </div>
   </section>
 
