@@ -103,8 +103,9 @@
   .trust{margin-top:20px;font-size:14px;color:var(--muted2);display:flex;gap:18px;flex-wrap:wrap}
   .trust b{color:var(--blue-bright);font-weight:700}
   .hero-phone{display:flex;justify-content:center;align-items:center}
-  .hero-phone img{width:100%;max-width:300px;height:auto;display:block;
-    filter:drop-shadow(0 0 2px rgba(130,175,255,.9)) drop-shadow(0 0 24px rgba(47,107,255,.55)) drop-shadow(0 26px 52px rgba(0,0,0,.55));}
+  .img-glow{display:block;width:100%;height:auto;
+    filter:drop-shadow(0 0 2px rgba(130,175,255,.9)) drop-shadow(0 0 24px rgba(47,107,255,.55)) drop-shadow(0 26px 52px rgba(0,0,0,.55))}
+  .hero-phone .img-glow{max-width:300px}
 
   section.block{padding:66px 0}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 44px}
@@ -126,27 +127,8 @@
   .acc-card .s{font-size:12px;color:var(--muted2)}
   .acc-card .arrow{color:var(--blue-bright);font-weight:700;font-size:14px;white-space:nowrap}
 
-  .showcase{position:relative;max-width:980px;margin:0 auto;padding:0 8px 8px}
-  .showcase-glow{position:absolute;inset:6% 8% 38%;background:radial-gradient(ellipse at 50% 42%,rgba(47,107,255,.32),transparent 70%);
-    filter:blur(32px);pointer-events:none;z-index:0}
-  .device{position:relative;z-index:1;
-    filter:drop-shadow(0 32px 64px rgba(0,0,0,.58)) drop-shadow(0 0 48px rgba(47,107,255,.18));
-    transition:transform .35s ease,filter .35s ease}
-  .device:hover{transform:translateY(-6px);
-    filter:drop-shadow(0 40px 72px rgba(0,0,0,.62)) drop-shadow(0 0 56px rgba(47,107,255,.24))}
-  .device-screen{background:linear-gradient(180deg,#1a2438 0%,#0c111f 100%);border:1px solid rgba(120,150,210,.32);
-    border-radius:20px 20px 8px 8px;padding:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),
-    0 0 0 1px rgba(47,107,255,.08)}
-  .screen-viewport{border-radius:12px;overflow:hidden;border:1px solid rgba(120,150,210,.2);
-    background:#070d1e;line-height:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
-  .screen-viewport img{display:block;width:100%;height:auto}
-  .device-hinge{height:7px;margin:0 3%;background:linear-gradient(90deg,transparent,rgba(120,150,210,.22),transparent)}
-  .device-base{height:16px;margin:0 10%;background:linear-gradient(180deg,#2a334a,#101622);
-    border:1px solid rgba(120,150,210,.2);border-top:none;border-radius:0 0 14px 14px;position:relative}
-  .device-base::after{content:"";position:absolute;left:50%;top:5px;transform:translateX(-50%);
-    width:110px;height:4px;border-radius:999px;background:rgba(120,150,210,.22)}
-  .device-foot{height:20px;margin:0 18% 0;background:linear-gradient(180deg,#161d2c,#080b14);
-    border-radius:0 0 22px 22px;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .showcase{max-width:1080px;margin:0 auto;text-align:center;padding:0 8px}
+  .showcase .img-glow{max-width:100%;border-radius:20px;margin:0 auto}
   .showcase-caption{margin-top:22px;text-align:center;font-size:14px;color:var(--muted2)}
   .showcase-caption b{color:var(--blue-bright);font-weight:700}
 
@@ -220,7 +202,7 @@
     .hero-text{text-align:center}
     .lead{margin-left:auto;margin-right:auto}
     .hero-cta,.trust{justify-content:center}
-    .hero-phone img{max-width:280px}
+    .hero-phone .img-glow{max-width:280px}
     .access-row{grid-template-columns:1fr;max-width:430px}
     .feats{grid-template-columns:1fr}
     .secure{padding:32px 22px}.secure-grid{grid-template-columns:1fr;gap:22px}
@@ -286,7 +268,7 @@
       <div class="trust"><span><b>✓</b> Sem cartão para testar</span><span><b>✓</b> Dados isolados por empresa</span><span><b>✓</b> Tema claro e escuro</span></div>
     </div>
     <div class="hero-phone reveal in">
-      <img src="./phone.png" alt="FinanceBit no celular — temas claro e escuro" />
+      <img class="img-glow" src="./phone.png" alt="FinanceBit no celular — temas claro e escuro" />
     </div>
   </section>
 
@@ -322,17 +304,7 @@
       <h2>O painel completo, no claro ou no escuro</h2>
     </div>
     <div class="showcase reveal">
-      <div class="showcase-glow" aria-hidden="true"></div>
-      <div class="device">
-        <div class="device-screen">
-          <div class="screen-viewport">
-            <img src="./showcase.jpg" alt="Painel do FinanceBit nos temas claro e escuro" />
-          </div>
-        </div>
-        <div class="device-hinge" aria-hidden="true"></div>
-        <div class="device-base" aria-hidden="true"></div>
-        <div class="device-foot" aria-hidden="true"></div>
-      </div>
+      <img class="img-glow" src="./showcase.jpg" alt="Painel do FinanceBit nos temas claro e escuro" />
       <p class="showcase-caption">Do seu jeito — no <b>tema claro</b> ou no <b>escuro</b>, com DRE, fluxo de caixa e obrigações na mesma tela.</p>
     </div>
     <p class="whoband reveal">Feito para <b>escritórios de contabilidade</b>, <b>contadores autônomos</b> e <b>empresas</b> que querem controle financeiro de verdade — sem planilhas espalhadas.</p>
