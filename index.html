@@ -126,10 +126,39 @@
   .acc-card .s{font-size:12px;color:var(--muted2)}
   .acc-card .arrow{color:var(--blue-bright);font-weight:700;font-size:14px;white-space:nowrap}
 
-  .showcase{margin:0 auto;max-width:1080px}
-  .showcase .frame{border-radius:20px;overflow:hidden;border:1px solid var(--line);
-    box-shadow:0 40px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(47,107,255,.07)}
-  .showcase img{display:block;width:100%;height:auto}
+  .showcase{position:relative;max-width:980px;margin:0 auto;padding:0 8px 8px}
+  .showcase-glow{position:absolute;inset:6% 8% 38%;background:radial-gradient(ellipse at 50% 42%,rgba(47,107,255,.32),transparent 70%);
+    filter:blur(32px);pointer-events:none;z-index:0}
+  .device{position:relative;z-index:1;
+    filter:drop-shadow(0 32px 64px rgba(0,0,0,.58)) drop-shadow(0 0 48px rgba(47,107,255,.18));
+    transition:transform .35s ease,filter .35s ease}
+  .device:hover{transform:translateY(-6px);
+    filter:drop-shadow(0 40px 72px rgba(0,0,0,.62)) drop-shadow(0 0 56px rgba(47,107,255,.24))}
+  .device-screen{background:linear-gradient(180deg,#1a2438 0%,#0c111f 100%);border:1px solid rgba(120,150,210,.28);
+    border-radius:18px 18px 6px 6px;padding:11px 11px 9px;box-shadow:inset 0 1px 0 rgba(255,255,255,.07)}
+  .browser-bar{display:flex;align-items:center;gap:12px;padding:8px 12px;margin-bottom:9px;
+    background:rgba(4,8,18,.55);border:1px solid rgba(120,150,210,.14);border-radius:9px}
+  .browser-dots{display:flex;gap:7px;flex-shrink:0}
+  .browser-dots span{width:10px;height:10px;border-radius:50%;display:block}
+  .browser-dots span:nth-child(1){background:#ff5f57}
+  .browser-dots span:nth-child(2){background:#febc2e}
+  .browser-dots span:nth-child(3){background:#28c840}
+  .browser-url{flex:1;text-align:center;font-size:12px;font-weight:600;color:var(--muted2);
+    background:rgba(120,150,210,.08);border:1px solid rgba(120,150,210,.14);border-radius:7px;padding:6px 12px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .browser-url svg{display:inline;vertical-align:-2px;margin-right:6px;opacity:.7}
+  .screen-viewport{border-radius:10px;overflow:hidden;border:1px solid rgba(120,150,210,.16);
+    background:#070d1e;line-height:0}
+  .screen-viewport img{display:block;width:100%;height:auto}
+  .device-hinge{height:7px;margin:0 3%;background:linear-gradient(90deg,transparent,rgba(120,150,210,.22),transparent)}
+  .device-base{height:16px;margin:0 10%;background:linear-gradient(180deg,#2a334a,#101622);
+    border:1px solid rgba(120,150,210,.2);border-top:none;border-radius:0 0 14px 14px;position:relative}
+  .device-base::after{content:"";position:absolute;left:50%;top:5px;transform:translateX(-50%);
+    width:110px;height:4px;border-radius:999px;background:rgba(120,150,210,.22)}
+  .device-foot{height:20px;margin:0 18% 0;background:linear-gradient(180deg,#161d2c,#080b14);
+    border-radius:0 0 22px 22px;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+  .showcase-caption{margin-top:22px;text-align:center;font-size:14px;color:var(--muted2)}
+  .showcase-caption b{color:var(--blue-bright);font-weight:700}
 
   .whoband{margin:60px auto 0;text-align:center;color:var(--muted);font-size:16px;max-width:760px}
   .whoband b{color:var(--text)}
@@ -303,7 +332,22 @@
       <h2>O painel completo, no claro ou no escuro</h2>
     </div>
     <div class="showcase reveal">
-      <div class="frame"><img src="./showcase.jpg" alt="Painel do FinanceBit nos temas claro e escuro" /></div>
+      <div class="showcase-glow" aria-hidden="true"></div>
+      <div class="device">
+        <div class="device-screen">
+          <div class="browser-bar">
+            <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="browser-url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg>financebit-virid.vercel.app · Painel financeiro</div>
+          </div>
+          <div class="screen-viewport">
+            <img src="./showcase.jpg" alt="Painel do FinanceBit nos temas claro e escuro" />
+          </div>
+        </div>
+        <div class="device-hinge" aria-hidden="true"></div>
+        <div class="device-base" aria-hidden="true"></div>
+        <div class="device-foot" aria-hidden="true"></div>
+      </div>
+      <p class="showcase-caption">Do seu jeito — no <b>tema claro</b> ou no <b>escuro</b>, com DRE, fluxo de caixa e obrigações na mesma tela.</p>
     </div>
     <p class="whoband reveal">Feito para <b>escritórios de contabilidade</b>, <b>contadores autônomos</b> e <b>empresas</b> que querem controle financeiro de verdade — sem planilhas espalhadas.</p>
   </section>
