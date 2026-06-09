@@ -435,6 +435,47 @@
     </div>
   </section>
 
+  <!-- QUEM ESTÁ POR TRÁS -->
+  <section class="block" id="fundador">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Quem faz o FinanceBit</span>
+      <h2>Quem está por trás</h2>
+    </div>
+    <div class="founder reveal">
+      <div class="founder-photo">
+        <!-- FOTO (amanhã): coloque o arquivo na pasta (ex.: fundador.jpg),
+             apague a linha das iniciais e descomente a tag <img> abaixo -->
+        <span class="founder-initials">IC</span>
+        <!-- <img class="founder-img" src="./fundador.jpg" alt="Isaque Cruz Monteiro" /> -->
+      </div>
+      <div class="founder-text">
+        <h3>Isaque Cruz Monteiro</h3>
+        <p class="founder-role">Fundador</p>
+        <p>Sou Isaque Cruz Monteiro, nascido no interior do Maranhão. Cresci na roça, trabalhando desde cedo ao lado dos meus pais — mas sempre com a mente inquieta, querendo crescer e buscando estudo e conhecimento. Nunca me apeguei à ideia de um emprego fixo; tinha coragem pra empreender e, acima de tudo, aprendi que o trabalho é uma virtude — que, antes de ser empresário, a gente precisa amar o que faz. Mesmo vindo de um lugar simples e isolado, tive, graças a Deus, o privilégio de adquirir muito conhecimento sobre finanças ao longo da vida.</p>
+        <p>E nem sempre foi fácil. Ainda jovem, trabalhando em São Paulo, tive meu primeiro contato real com a vida financeira e, sem noção de gestão, acabei me endividando — uma dívida que me acompanhou por quase quatro anos. Foi apanhando que aprendi a lição mais valiosa: ter controle das finanças muda a vida pra melhor. Esse aperto virou propósito — mergulhei em dinheiro, negócios e gestão financeira, e foi daí que nasceu o FinanceBit: para tornar a gestão financeira simples, organizada e ao alcance de qualquer pessoa. O que aprendi no susto, quero que você tenha de forma fácil.</p>
+      </div>
+    </div>
+
+    <style>
+      .founder{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;max-width:920px;margin:0 auto;
+        background:linear-gradient(180deg,var(--surface-card),#0b1730);border:1px solid var(--line);
+        border-radius:22px;padding:36px;}
+      .founder-photo{width:170px;height:170px;border-radius:50%;overflow:hidden;display:grid;place-items:center;
+        background:linear-gradient(150deg,#1f4fd0,#0e2a6b);border:1px solid rgba(120,150,210,.25);
+        box-shadow:0 16px 40px rgba(0,0,0,.4);margin:0 auto;}
+      .founder-initials{font-size:54px;font-weight:800;color:#eaf1ff;}
+      .founder-img{width:100%;height:100%;object-fit:cover;display:block;}
+      .founder-text h3{font-size:22px;font-weight:800;letter-spacing:-.01em;}
+      .founder-role{color:var(--blue-bright);font-weight:700;font-size:14px;margin-bottom:16px;}
+      .founder-text p{color:var(--muted);font-size:15.5px;line-height:1.7;margin-bottom:14px;}
+      .founder-text p:last-child{margin-bottom:0;}
+      @media(max-width:760px){
+        .founder{grid-template-columns:1fr;gap:22px;padding:28px 22px;text-align:center;}
+        .founder-text p{text-align:left;}
+      }
+    </style>
+  </section>
+
   <!-- CTA FINAL -->
   <section class="block">
     <div class="final reveal">
