@@ -492,10 +492,36 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <img src="./logo.png" alt="FinanceBit" />
-    <div>© 2026 FinanceBit · Gestão Financeira Inteligente. Todos os direitos reservados.</div>
+  <div class="wrap">
+    <!-- REDES SOCIAIS -->
+    <div class="social-row">
+      <!-- Troque o href pelo link real do perfil. Deixe SÓ as redes que você terá. -->
+      <a href="#" target="_blank" rel="noopener" aria-label="Instagram FinanceBit">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.2 1 .5 1.4 1 .5.4.8.8 1 1.4.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.2.6-.5 1-1 1.4-.4.5-.8.8-1.4 1-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.2-1-.5-1.4-1-.5-.4-.8-.8-1-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.2-.6.5-1 1-1.4.4-.5.8-.8 1.4-1 .4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 8.1a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm6.2-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn FinanceBit">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="Facebook FinanceBit">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="YouTube FinanceBit">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M23 7.5s-.2-1.6-.9-2.3c-.8-.9-1.8-.9-2.2-.95C16.7 4 12 4 12 4s-4.7 0-7.9.25c-.4.05-1.4.05-2.2.95C1.2 5.9 1 7.5 1 7.5S.8 9.4.8 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.8.9 1.9.85 2.4.95C6.1 19.95 12 20 12 20s4.7 0 7.9-.25c.4-.05 1.4-.05 2.2-.95.7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.8 14.6V8.9l5 2.85z"/></svg>
+      </a>
+    </div>
+    <div class="foot">
+      <img src="./logo.png" alt="FinanceBit" />
+      <div>© 2026 FinanceBit · Gestão Financeira Inteligente. Todos os direitos reservados.</div>
+    </div>
   </div>
+
+  <style>
+    .social-row{display:flex;gap:14px;justify-content:center;align-items:center;margin-bottom:20px;}
+    .social-row a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+      background:var(--surface-card,#101c34);border:1px solid var(--line);color:var(--muted);transition:.15s ease;}
+    .social-row a:hover{color:#fff;border-color:var(--blue-bright);transform:translateY(-2px);}
+    .social-row svg{fill:currentColor;}
+  </style>
 </footer>
 
 <script>
